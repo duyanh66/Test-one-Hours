@@ -1,0 +1,23 @@
+<table class="border-2 space-x-5 mx-5 px-5">
+    <thead class="bg-red-400">
+    <td>Stt</td>
+    <td>Image</td>
+    <td>Name</td>
+    <td>Price</td>
+    <td>Action</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products; index as i">
+            <td>{{ i + 1 }}</td>
+            <td width="50"><img width="50" [src]="product.img" /></td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+                <button class="bg-red-600 rounded-full p-2" (click)="removeItem(product.id)">
+                    Remove
+                  </button>
+                <!-- <button (click)="getInfo(product)">Detail</button> -->
+            </td>
+        </tr>
+    </tbody>
+</table>
